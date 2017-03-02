@@ -16,10 +16,6 @@ class DingdianItem(scrapy.Item):
     author = scrapy.Field()
     # 小说网址
     novelurl = scrapy.Field()
-    # 小说状态
-    serialstatus = scrapy.Field()
-    # 字数
-    textnumber = scrapy.Field()
     # 类型
     category = scrapy.Field()
     # 小说编号
