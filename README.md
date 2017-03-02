@@ -14,12 +14,11 @@ conn = pymysql.connect(
     db='xiaoshuo',
     charset='utf8'
 )
-    break
 ```
 
 ## 运行步骤
 
 ``` bash
-IDE下运行entrypoint (推荐使用pycharm)
+IDE下运行entrypoint.py (推荐使用pycharm)
 
 ```
