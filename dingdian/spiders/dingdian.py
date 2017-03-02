@@ -17,7 +17,6 @@ class Myspider(scrapy.Spider):
         for i in range(1, 11):
             url = self.bash_url + str(i) + '_1' + self.bashurl
             yield Request(url, self.parse)
-        yield Request('http://www.23us.com/quanben/1', self.parse)
 
     def parse(self, response):
         response_soup = BeautifulSoup(response.text, 'lxml')
@@ -50,8 +49,6 @@ class Myspider(scrapy.Spider):
         category = all_start.find('a').get_text()
         author = all_start.find_all('td')[1].get_text().replace('\xa0', '')
         chapter_list_url = BeautifulSoup(response.text,'lxml').find('a', class_='read')['href']
-        # serialstatus = all_start.find_all('td')[2].get_text() 状态
-        # textnumber = all_start.find_all('td')[4].get_text() 字数
         # http://www.23us.com/book/ = 25 得到尾部数字
         length = len(item['novelurl']) - 25
         name_id = item['novelurl'][-length:]
